@@ -1,14 +1,14 @@
 package com.example.lab1;
 
     public class Element {
-        /** String array of words for tens Names */
+        /* String array of words for tens Names */
         private static final String[] tensNames =
                 {
                         "", "", "TWENTY", "THIRTY", "FORTY", "FIFTY", "SIXTY", "SEVENTY",
                         "EIGHTY", "NINETY"
                 };
 
-        /** String array of words for ones Names */
+        /* String array of words for ones Names */
         private static final String[] onesNames =
                 {
                         "", "ONE", "TWO", "THREE", "FOUR", "FIVE", "SIX", "SEVEN", "EIGHT",
