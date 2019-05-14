@@ -1,19 +1,33 @@
 package com.example.lab1;
 
     public class Element {
+        /* String array of words for thousends Names */
+        private static final String[] thousendsNames =
+                {
+                        "ТЫСЯЧ", "ТЫСЯЧА", "ТЫСЯЧИ", "ТЫСЯЧИ", "ТЫСЯЧИ", "ТЫСЯЧ", "ТЫСЯЧ", "ТЫСЯЧ",
+                        "ТЫСЯЧ", "ТЫСЯЧ"
+                };
+
+        /* String array of words for hundreds Names */
+        private static final String[] hundredsNames =
+                {
+                        "", "СТО", "ДВЕСТИ", "ТРИСТА", "ЧЕТЫРЕСТА", "ПЯТЬСОТ", "ШЕСТЬСОТ", "СЕМЬСОТ",
+                        "ВОСЕМЬСОТ", "ДЕВЯТЬСОТ"
+                };
+
         /* String array of words for tens Names */
         private static final String[] tensNames =
                 {
-                        "", "", "TWENTY", "THIRTY", "FORTY", "FIFTY", "SIXTY", "SEVENTY",
-                        "EIGHTY", "NINETY"
+                        "", "", "ДВАДЦАТЬ", "ТРИДЦАТЬ", "СОРОК", "ПЯТЬДЕСЯТ", "ШЕСТЬДЕСЯТ", "СЕМЬДЕСЯТ",
+                        "ВОСЕМЬДЕСЯТ", "ДЕВЯНОСТО"
                 };
 
         /* String array of words for ones Names */
         private static final String[] onesNames =
                 {
-                        "", "ONE", "TWO", "THREE", "FOUR", "FIVE", "SIX", "SEVEN", "EIGHT",
-                        "NINE", "TEN", "ELEVEN", "TWELVE", "THIRTEEN", "FOURTEEN", "FIFTEEN",
-                        "SIXTEEN", "SEVENTEEN", "EIGHTEEN", "NINETEEN"
+                        "", "ОДИН", "ДВА", "ТРИ", "ЧЕТЫРЕ", "ПЯТЬ", "ШЕСТЬ", "СЕМЬ", "ВОСЕМЬ",
+                        "ДЕВЯТЬ", "ДЕСЯТЬ", "ОДИННАДЦАТЬ", "ДВЕНАДЦАТЬ", "ТРИНАДЦАТЬ", "ЧЕТЫРНАДЦАТЬ", "ПЯТНАДЦАТЬ",
+                        "ШЕСТНАДЦАТЬ", "СЕМНАДЦАТЬ", "ВОСЕМНАДЦАТЬ", "ДЕВЯТНАДЦАТЬ"
                 };
         private int val;
 
@@ -57,19 +71,31 @@ package com.example.lab1;
 
             if (thousands > 0)
             {
-                result.append(evaluate(thousands) + " THOUSAND ");
+                int itemp = ( int ) thousands % 100;
+                int jtemp = ( int ) thousands % 10;
+                String istr = evaluate(thousands);
+                if ((itemp < 11) || (itemp > 20)) {
+                    if (jtemp == 1)
+                        istr = istr.replace("ОДИН", "ОДНА");
+                    if (jtemp == 2)
+                        istr = istr.replace("ДВА", "ДВЕ");
+                    istr = istr + " " + thousendsNames[jtemp] + " ";
+                } else {
+                    istr = istr + " ТЫСЯЧ ";
+                }
+                result.append(istr);
             }
 
             if (hundreds > 0)
             {
-                result.append(evaluate(hundreds) + " HUNDRED ");
+                result.append(hundredsNames[( int ) hundreds] + " ");
             }
 
             if (temp != 0)
             {
                 if (number >= 100)
                 {
-                    result.append("AND ");
+                    result.append(" ");
                 }
 
                 if ((0 < temp) && (temp <= 19))
@@ -89,7 +115,7 @@ package com.example.lab1;
                     .toString()).trim()
                     .equals(""))
             {
-                result.append(" ZERO ");
+                result.append(" НОЛЬ ");
             }
 
             return result.toString();
