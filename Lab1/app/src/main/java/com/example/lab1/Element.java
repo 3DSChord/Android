@@ -45,8 +45,8 @@ package com.example.lab1;
         {
             long temp = number;
 
-            long crore = temp / 10000000;
-            temp %= 10000000;
+            long mil = temp / 1000000;
+            temp %= 1000000;
 
             long lakh = temp / 100000;
             temp %= 100000;
@@ -59,14 +59,14 @@ package com.example.lab1;
 
             StringBuffer result = new StringBuffer(30);
 
-            if (crore > 0)
+            if (mil > 0)
             {
-                result.append(evaluate(crore) + " CRORE ");
+                result.append("МИЛЛИОН");
             }
 
             if (lakh > 0)
             {
-                result.append(evaluate(lakh) + " LAKH ");
+                result.append(hundredsNames[( int ) lakh] + " ");
             }
 
             if (thousands > 0)
