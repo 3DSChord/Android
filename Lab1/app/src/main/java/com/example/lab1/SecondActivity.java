@@ -44,6 +44,6 @@ public class SecondActivity extends Activity{
     }
 
     private void setInitialData(){
-        for(int i = 1; i < 1000001; i++) elements.add(new Element(i));
+        for(int i = 327190; i < 1000001; i++) elements.add(new Element(i));
     }
 }
