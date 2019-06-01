@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Lab3_2</string>
+    <string name="describeButtonOld_name">Список студентов в формате БД версии 1</string>
+    <string name="describeButton_name">Список студентов в формате БД версии 2</string>
+    <string name="addButton_name">Добавить запись</string>
+    <string name="changeLastButton_name">Изменить последнюю запись</string>
+    <string name="changeDBVersion_name">Изменить версию БД</string>
+</resources>
