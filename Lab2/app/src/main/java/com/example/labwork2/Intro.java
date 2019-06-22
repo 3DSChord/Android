@@ -92,7 +92,7 @@ public class Intro extends AppCompatActivity {
             if (jsonobject.has("graphic"))
                 technologies.put("graphic", jsonobject.getString("graphic"));
             // Set the JSON Objects into the array
-            if ((jsonobject != null) && jsonobject.has("name"))
+            if (jsonobject.has("name"))
                 arraylist.add(technologies);
         }
     }
