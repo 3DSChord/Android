@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Каталог книжных изданий</string>
+    <string name="empty_text">Текст</string>
+    <string name="btn_refresh">Обновить</string>
+    <string name="btn_by_author">Сорт. по автору</string>
+    <string name="btn_by_name">по названию</string>
+</resources>
